@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-int n; //n-длина стороны квадрата.
+int n; //n-РґР»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ РєРІР°РґСЂР°С‚Р°.
 
 int main()
 {
 	setlocale(LC_ALL, "RUS");
-	cout << "Введите длину квадрата" << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ РєРІР°РґСЂР°С‚Р°" << endl;
 	cin >> n;
 	for (int i = 1; i <= n; i++)
 	{
