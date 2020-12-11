@@ -4,14 +4,14 @@
 using namespace std;
 
 int n; //n-n.
-float x, fact, y; //x-x. fact-факториал. y-значение многочлена.
+float x, fact, y; //x-x. fact-С„Р°РєС‚РѕСЂРёР°Р». y-Р·РЅР°С‡РµРЅРёРµ РјРЅРѕРіРѕС‡Р»РµРЅР°.
 
 int main()
 {
 	setlocale(LC_ALL, "RUS");
-	cout << "Введите n : n = ";
+	cout << "Р’РІРµРґРёС‚Рµ n : n = ";
 	cin >> n;
-	cout << "Введите x : x = ";
+	cout << "Р’РІРµРґРёС‚Рµ x : x = ";
 	cin >> x;
 	y = 1;
 	fact = 1;
@@ -20,6 +20,6 @@ int main()
 		fact *= i;
 		y += (pow(x, i) / fact);
 	}
-	cout << "Значение многочлена = " << y;
+	cout << "Р—РЅР°С‡РµРЅРёРµ РјРЅРѕРіРѕС‡Р»РµРЅР° = " << y;
 	return 0;
 }
