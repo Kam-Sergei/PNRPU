@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-int n,a,b; //n-n.
+int n,a,b;
 void f(int n)
 {
 	if (n % a != 0 or n % b != 0)
@@ -11,16 +11,16 @@ void f(int n)
 	}
 	else
 	{
-		cout <<"ÍÎÊ ("<<a<<";"<<b<<") = "<< n;
+		cout <<"ÐÐžÐš ("<<a<<";"<<b<<") = "<< n;
 	}
 }
 
 int main()
 {
 	setlocale(LC_ALL, "RUS");
-	cout << "Ââåäèòå ïåðâîå ÷èñëî a: a = ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÐµÑ€Ð²Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ a: a = ";
 	cin >> a;
-	cout << "Ââåäèòå âòîðîå ÷èñëî b : b = ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‚Ð¾Ñ€Ð¾Ðµ Ñ‡Ð¸ÑÐ»Ð¾ b : b = ";
 	cin >> b;
 	n = 1;
 	f(n);
