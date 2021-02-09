@@ -4,10 +4,10 @@ using namespace std;
 FILE* file;
 
 struct Inform {
-    string bearer;       //носитель
-    int volume;          //объём
-    string title;        //название        
-    string author;       //автор
+    string bearer;       //РЅРѕСЃРёС‚РµР»СЊ
+    int volume;          //РѕР±СЉС‘Рј
+    string title;        //РЅР°Р·РІР°РЅРёРµ        
+    string author;       //Р°РІС‚РѕСЂ
 };
 
 void vvod(int n)
@@ -17,19 +17,19 @@ void vvod(int n)
     n = n - 1;
     for (int i = 0; i < n; i++)
     {
-        cout << "Введите " << i + 1 << " элемент:" << endl;
-        cout << "  Носитель: ";
+        cout << "Р’РІРµРґРёС‚Рµ " << i + 1 << " СЌР»РµРјРµРЅС‚:" << endl;
+        cout << "  РќРѕСЃРёС‚РµР»СЊ: ";
         cin >> st[i].bearer;
-        cout << "  Объём: ";
+        cout << "  РћР±СЉС‘Рј: ";
         cin >> st[i].volume;
-        cout << "  Название: ";
+        cout << "  РќР°Р·РІР°РЅРёРµ: ";
         cin >> st[i].title;
-        cout << "  Автор: ";
+        cout << "  РђРІС‚РѕСЂ: ";
         cin >> st[i].author;
     }
     if ((file = fopen("t", "w")) == NULL)
     {
-        perror("Ошибка при открытии файла");
+        perror("РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р°");
         exit(0);
     }
     fwrite(&st, sizeof(Inform), 1, file);
@@ -40,25 +40,25 @@ void vvod(int n)
 void vivod(int n)
 {
     Inform* st = new Inform[n];
-    cout << "Элементы  структуры:" << endl;
+    cout << "Р­Р»РµРјРµРЅС‚С‹  СЃС‚СЂСѓРєС‚СѓСЂС‹:" << endl;
     if (n == 0)
     {
-        cout << "В структуре нет элементов " << endl;
+        cout << "Р’ СЃС‚СЂСѓРєС‚СѓСЂРµ РЅРµС‚ СЌР»РµРјРµРЅС‚РѕРІ " << endl;
     }
     else {
         if ((file = fopen("t", "rb")) == NULL)
         {
-            perror("Ошибка при открытии файла");
+            perror("РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р°");
             exit(0);
         }
         fread(&st, sizeof(n), 1, file);
         for (int i = 0; i < n; i++)
         {
-            cout << i + 1 << " элемент:" << endl;
-            cout << "Носитель: " << st[i].bearer << "  ";
-            cout << "Объём: " << st[i].volume << "  ";
-            cout << "Название: " << st[i].title << "  ";
-            cout << "Автор: " << st[i].author << "  ";
+            cout << i + 1 << " СЌР»РµРјРµРЅС‚:" << endl;
+            cout << "РќРѕСЃРёС‚РµР»СЊ: " << st[i].bearer << "  ";
+            cout << "РћР±СЉС‘Рј: " << st[i].volume << "  ";
+            cout << "РќР°Р·РІР°РЅРёРµ: " << st[i].title << "  ";
+            cout << "РђРІС‚РѕСЂ: " << st[i].author << "  ";
             cout << endl;
         }
     }
@@ -71,14 +71,14 @@ int del(int n)
     Inform* st = new Inform[n];
     if ((file = fopen("t", "rb")) == NULL)
     {
-        perror("Ошибка при открытии файла");
+        perror("РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р°");
         exit(0);
     }
     fread(&st, sizeof(n), 1, file);
     fclose(file);
     int k = -1;
     int d;
-    cout << "Введите объём первого элемнта, который надо удалить: ";
+    cout << "Р’РІРµРґРёС‚Рµ РѕР±СЉС‘Рј РїРµСЂРІРѕРіРѕ СЌР»РµРјРЅС‚Р°, РєРѕС‚РѕСЂС‹Р№ РЅР°РґРѕ СѓРґР°Р»РёС‚СЊ: ";
     cin >> d;
     for (int i = 0; i < n; i++)
     {
@@ -90,7 +90,7 @@ int del(int n)
     }
     if (k == -1)
     {
-        cout << "Элемент не найден" << endl;
+        cout << "Р­Р»РµРјРµРЅС‚ РЅРµ РЅР°Р№РґРµРЅ" << endl;
     }
     else {
         for (int i = k; i < n - 1; i++)
@@ -105,7 +105,7 @@ int del(int n)
     cout << endl;
     if ((file = fopen("t", "w")) == NULL)
     {
-        perror("Ошибка при открытии файла");
+        perror("РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р°");
         exit(0);
     }
     fwrite(&st, sizeof(Inform), 1, file);
@@ -118,7 +118,7 @@ int add(int n)
     Inform* st = new Inform[n];
     if ((file = fopen("t", "rb")) == NULL)
     {
-        perror("Ошибка при открытии файла");
+        perror("РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р°");
         exit(0);
     }
     fread(&st, sizeof(n), 1, file);
@@ -126,7 +126,7 @@ int add(int n)
     if (n != 0)
     {
         int d;
-        cout << "Введите номер элемента, перед которым надо добавить элемент: ";
+        cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ СЌР»РµРјРµРЅС‚Р°, РїРµСЂРµРґ РєРѕС‚РѕСЂС‹Рј РЅР°РґРѕ РґРѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚: ";
         cin >> d;
         d = d - 1;
         st[n].bearer = st[n - 1].bearer;
@@ -146,27 +146,27 @@ int add(int n)
                 i = i - 1;
             }
         }
-        cout << "Введите новый элемент:" << endl;
-        cout << "Носитель: ";
+        cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ СЌР»РµРјРµРЅС‚:" << endl;
+        cout << "РќРѕСЃРёС‚РµР»СЊ: ";
         cin >> st[d].bearer;
-        cout << "Объём: ";
+        cout << "РћР±СЉС‘Рј: ";
         cin >> st[d].volume;
-        cout << "Название: ";
+        cout << "РќР°Р·РІР°РЅРёРµ: ";
         cin >> st[d].title;
-        cout << "Автор: ";
+        cout << "РђРІС‚РѕСЂ: ";
         cin >> st[d].author;
         cout << endl;
         n = n + 1;
         if ((file = fopen("t", "w")) == NULL)
         {
-            perror("Ошибка при открытии файла");
+            perror("РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р°");
             exit(0);
         }
         fwrite(&st, sizeof(Inform), 1, file);
         fclose(file);
     }
     else {
-        cout << "В структуре нет элементов, поэтому добавить элемент перед элементом с указанным номером не вохможно" << endl << endl;
+        cout << "Р’ СЃС‚СЂСѓРєС‚СѓСЂРµ РЅРµС‚ СЌР»РµРјРµРЅС‚РѕРІ, РїРѕСЌС‚РѕРјСѓ РґРѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РїРµСЂРµРґ СЌР»РµРјРµРЅС‚РѕРј СЃ СѓРєР°Р·Р°РЅРЅС‹Рј РЅРѕРјРµСЂРѕРј РЅРµ РІРѕС…РјРѕР¶РЅРѕ" << endl << endl;
     }
     return n;
 }
@@ -174,7 +174,7 @@ int add(int n)
 int main() {
     setlocale(LC_ALL, "Rus");
     int n;
-    cout << "Введите количество элементов в структуре: ";
+    cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ СЃС‚СЂСѓРєС‚СѓСЂРµ: ";
     cin >> n;
     vvod(n);
     vivod(n);
