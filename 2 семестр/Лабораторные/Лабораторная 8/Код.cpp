@@ -90,7 +90,7 @@ int del(int n)
     }
     if (k == -1)
     {
-        cout << "Элемент не найден" << endl;
+        cout << "Элемент с данным объёмом не найден" << endl;
     }
     else {
         for (int i = k; i < n - 1; i++)
@@ -128,45 +128,52 @@ int add(int n)
         int d;
         cout << "Введите номер элемента, перед которым надо добавить элемент: ";
         cin >> d;
-        d = d - 1;
-        st[n].bearer = st[n - 1].bearer;
-        st[n].volume = st[n - 1].volume;
-        st[n].title = st[n - 1].title;
-        st[n].author = st[n - 1].author;
-        int i;
-        i = n - 1;
-        if (n != 1)
+        if (d > n)
         {
-            while (i != d)
+            cout << "Элемента с заданным номером нет "<<endl<<endl;
+        }
+        else
+        {
+            d = d - 1;
+            st[n].bearer = st[n - 1].bearer;
+            st[n].volume = st[n - 1].volume;
+            st[n].title = st[n - 1].title;
+            st[n].author = st[n - 1].author;
+            int i;
+            i = n - 1;
+            if (n != 1)
             {
-                st[i].bearer = st[i - 1].bearer;
-                st[i].volume = st[i - 1].volume;
-                st[i].title = st[i - 1].title;
-                st[i].author = st[i - 1].author;
-                i = i - 1;
+                while (i != d)
+                {
+                    st[i].bearer = st[i - 1].bearer;
+                    st[i].volume = st[i - 1].volume;
+                    st[i].title = st[i - 1].title;
+                    st[i].author = st[i - 1].author;
+                    i = i - 1;
+                }
             }
+            cout << "Введите новый элемент:" << endl;
+            cout << "Носитель: ";
+            cin >> st[d].bearer;
+            cout << "Объём: ";
+            cin >> st[d].volume;
+            cout << "Название: ";
+            cin >> st[d].title;
+            cout << "Автор: ";
+            cin >> st[d].author;
+            cout << endl;
+            n = n + 1;
+            if ((file = fopen("t", "w")) == NULL)
+            {
+                perror("Ошибка при открытии файла");
+                exit(0);
+            }
+            fwrite(&st, sizeof(Inform), 1, file);
+            fclose(file);
         }
-        cout << "Введите новый элемент:" << endl;
-        cout << "Носитель: ";
-        cin >> st[d].bearer;
-        cout << "Объём: ";
-        cin >> st[d].volume;
-        cout << "Название: ";
-        cin >> st[d].title;
-        cout << "Автор: ";
-        cin >> st[d].author;
-        cout << endl;
-        n = n + 1;
-        if ((file = fopen("t", "w")) == NULL)
-        {
-            perror("Ошибка при открытии файла");
-            exit(0);
-        }
-        fwrite(&st, sizeof(Inform), 1, file);
-        fclose(file);
     }
     else {
-        cout << "В структуре нет элементов, поэтому добавить элемент перед элементом с указанным номером не вохможно" << endl << endl;
+        cout << "В структуре нет элементов, поэтому добавить элемент перед элементом с указанным номером не возможно" << endl << endl;
     }
     return n;
 }
