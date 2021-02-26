@@ -2,11 +2,11 @@
 using namespace std;
 
 int mas[8][8];
-int str, col;
+int str, col;   //str-—Å—Ç—Ä–æ–∫–∞, col-—Å—Ç–æ–ª–±–µ—Ü
 
-void vvod();
-void del();
-void vivod();
+void vvod();    //–§—É–Ω–∫—Ü–∏—è –¥–æ–±–∞–≤–ª–µ–Ω–∏—è
+void del();     //–§—É–Ω–∫—Ü–∏—è —É–¥–∞–ª–µ–Ω–∏—è
+void vivod();   //–§—É–Ω–∫—Ü–∏—è –≤—ã–≤–æ–¥–∞
 
 void vvod()
 {
@@ -78,7 +78,7 @@ void vvod()
 				}
 				j = 7;
 				col = 0;
-				cout << "ƒÓÒÍ‡ ÔÓÒÎÂ ‰Ó·‡‚ÎÂÌËÂ:" << endl;
+				cout << "–î–æ—Å–∫–∞ –ø–æ—Å–ª–µ –¥–æ–±–∞–≤–ª–µ–Ω–∏–µ:" << endl;
 				vivod();
 				if (str == 7)
 				{
@@ -96,9 +96,9 @@ void vvod()
 							}
 						}
 					}
-					cout << "–ÂÁÛÎ¸Ú‡Ú:" << endl;
-					cout << "1 - ÍÎÂÚÍ‡ Ò ÙÂÁ∏Ï" << endl;
-					cout << "0 - ÔÛÒÚ‡ˇ ÍÎÂÚÍ‡" << endl << endl;
+					cout << "–†–µ–∑—É–ª—å—Ç–∞—Ç:" << endl;
+					cout << "1 - –∫–ª–µ—Ç–∫–∞ —Å —Ñ–µ—Ä–∑—ë–º" << endl;
+					cout << "0 - –ø—É—Å—Ç–∞—è –∫–ª–µ—Ç–∫–∞" << endl << endl;
 					vivod();
 					exit(0);
 				}
@@ -184,7 +184,7 @@ void del()
 		x++;
 		y--;
 	}
-	cout << "ƒÓÒÍ‡ ÔÓÒÎÂ Û‰‡ÎÂÌËˇ:" << endl;
+	cout << "–î–æ—Å–∫–∞ –ø–æ—Å–ª–µ —É–¥–∞–ª–µ–Ω–∏—è:" << endl;
 	vivod();
 	for (int j = col + 1; j < 8; j++)
 	{
@@ -223,7 +223,7 @@ int main()
 	}
 	str = 0;
 	col = 0;
-	cout << "œÛÒÚ‡ˇ ‰ÓÒÍ‡:" << endl;
+	cout << "–ü—É—Å—Ç–∞—è –¥–æ—Å–∫–∞:" << endl;
 	vivod();
 	vvod();
 	return 0;
