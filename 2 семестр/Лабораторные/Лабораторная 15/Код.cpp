@@ -5,12 +5,12 @@ using namespace std;
 
 struct items
 {
-	string name;   //название предмета
-	float weight;  //вес предмета
+	string name;   //РЅР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°
+	float weight;  //РІРµСЃ РїСЂРµРґРјРµС‚Р°
 };
 
 void ShellSort(items* a, int n)
-{//Сортировка Шелла
+{//РЎРѕСЂС‚РёСЂРѕРІРєР° РЁРµР»Р»Р°
 	int b = n / 2;
 	while (b > 0)
 	{
@@ -38,7 +38,7 @@ void ShellSort(items* a, int n)
 }
 
 void HoaraSort(items* arr, int left, int right)
-{//Сортировка Хоара
+{//РЎРѕСЂС‚РёСЂРѕРІРєР° РҐРѕР°СЂР°
 	float d;
 	string f;
 	int i = left;
@@ -76,36 +76,36 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	int n;
-	cout << "Введите количество предметов: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРµРґРјРµС‚РѕРІ: ";
 	cin >> n;
-	cout << "Введите предметы: "<<endl;
+	cout << "Р’РІРµРґРёС‚Рµ РїСЂРµРґРјРµС‚С‹: "<<endl;
 	cin.ignore();
 	items* st = new items[n];
 	for (int i = 0; i < n; i++)
 	{
-		cout << "Название предмета: ";
+		cout << "РќР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°: ";
 		cout << " ";
 		getline(cin,st[i].name);
-		cout << " Вес предмета: ";
+		cout << " Р’РµСЃ РїСЂРµРґРјРµС‚Р°: ";
 		cin >> st[i].weight;
 		cin.ignore();
 	}
 	int a;
-	cout <<endl<< "Операции:"<<endl;
-	cout << "1 - сортировка Шелла "<<endl;
-	cout << "2 - сортировка Хоара"<<endl;
-	cout << "Введите операцию: ";
+	cout <<endl<< "РћРїРµСЂР°С†РёРё:"<<endl;
+	cout << "1 - СЃРѕСЂС‚РёСЂРѕРІРєР° РЁРµР»Р»Р° "<<endl;
+	cout << "2 - СЃРѕСЂС‚РёСЂРѕРІРєР° РҐРѕР°СЂР°"<<endl;
+	cout << "Р’РІРµРґРёС‚Рµ РѕРїРµСЂР°С†РёСЋ: ";
 	cin >>a;
 	switch (a)
 	{
 	case 1: ShellSort(st, n); break;
 	case 2: HoaraSort(st, 0, n - 1);; break;
-	default: cout << "ОШИБКА!!! Неизвестная операция. Сортировка не выполнена." << endl;
+	default: cout << "РћРЁРР‘РљРђ!!! РќРµРёР·РІРµСЃС‚РЅР°СЏ РѕРїРµСЂР°С†РёСЏ. РЎРѕСЂС‚РёСЂРѕРІРєР° РЅРµ РІС‹РїРѕР»РЅРµРЅР°." << endl;
 	}
-	cout << endl << "После сортировки: " << endl;
+	cout << endl << "РџРѕСЃР»Рµ СЃРѕСЂС‚РёСЂРѕРІРєРё: " << endl;
 	for (int i = 0; i < n; i++)
 	{
-		cout << "Название предмета: "  << st[i].name << endl;
-		cout << " Вес предмета: "  << st[i].weight << endl;
+		cout << "РќР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°: "  << st[i].name << endl;
+		cout << " Р’РµСЃ РїСЂРµРґРјРµС‚Р°: "  << st[i].weight << endl;
 	}
 }
