@@ -136,71 +136,71 @@ int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	cout << "Ââåäèòå êîëè÷åñòâî ýëåìåíòîâ: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²: ";
 	cin >> n;
 	inform* st = new inform[n];
 	cin.ignore();
 	for (int i = 0; i < n; i++)
 	{
-		cout << "Ââåäèòå ÔÈÎ: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¤Ð˜Ðž: ";
 		getline(cin, st[i].fio);
-		cout << "Ââåäèòå ¹ ïàñïîðòà: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ â„– Ð¿Ð°ÑÐ¿Ð¾Ñ€Ñ‚Ð°: ";
 		getline(cin, st[i].passport);
-		cout << "Ââåäèòå ¹ òåëåôîíà: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ â„– Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°: ";
 		getline(cin, st[i].number);
 		st[i].number = correct(st[i].number);
 	}
-	cout << endl << "Ïîèñê îñóùåñòâëÿåòñÿ ïî ¹ òåëåôîíà:"<<endl;
-	cout << "Ââåäèòå êëþ÷ äëÿ ïîèñêà: ";
+	cout << endl << "ÐŸÐ¾Ð¸ÑÐº Ð¾ÑÑƒÑ‰ÐµÑÑ‚Ð²Ð»ÑÐµÑ‚ÑÑ Ð¿Ð¾ â„– Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°:"<<endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ»ÑŽÑ‡ Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ°: ";
 	cin >> key;
 	key = correct(key);
-	cout << endl << "Îïåðàöèè:" << endl;
-	cout << "1 - ïîèñê àëãîðèòìîì Êíóòà Ìîððèñà Ïðàòòà" << endl;
-	cout << "2 - ïîèñê àëãîðèòìîì Áîåðà-Ìóðà " << endl;
+	cout << endl << "ÐžÐ¿ÐµÑ€Ð°Ñ†Ð¸Ð¸:" << endl;
+	cout << "1 - Ð¿Ð¾Ð¸ÑÐº Ð°Ð»Ð³Ð¾Ñ€Ð¸Ñ‚Ð¼Ð¾Ð¼ ÐšÐ½ÑƒÑ‚Ð° ÐœÐ¾Ñ€Ñ€Ð¸ÑÐ° ÐŸÑ€Ð°Ñ‚Ñ‚Ð°" << endl;
+	cout << "2 - Ð¿Ð¾Ð¸ÑÐº Ð°Ð»Ð³Ð¾Ñ€Ð¸Ñ‚Ð¼Ð¾Ð¼ Ð‘Ð¾ÐµÑ€Ð°-ÐœÑƒÑ€Ð° " << endl;
 	int a;
-	cout << "Ââåäèòå îïåðàöèþ: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸ÑŽ: ";
 	cin >> a;
 	cout << endl;
 	bool l;
 	bool p = 0;
 	if (a != 1 && a != 2)
 	{
-		cout << "ÎØÈÁÊÀ!!! Íåèçâåñòíàÿ îïåðàöèÿ. Ïîèñê íå âûïîëíåí." << endl;
+		cout << "ÐžÐ¨Ð˜Ð‘ÐšÐ!!! ÐÐµÐ¸Ð·Ð²ÐµÑÑ‚Ð½Ð°Ñ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸Ñ. ÐŸÐ¾Ð¸ÑÐº Ð½Ðµ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½." << endl;
 		exit(0);
 	}
 	else if (a == 1)
 	{
-		cout << "Ðåçóëüòàò ïîèñêà:"<<endl;
+		cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ð¿Ð¾Ð¸ÑÐºÐ°:"<<endl;
 		for (int i = 0; i < n; i++)
 		{
 			l = Knut_Morris_Pratt(st[i].number);
 			if (l != 0)
 			{
-				cout << "ÔÈÎ: " << st[i].fio << endl;
-				cout << "¹ ïàñïîðòà: " << st[i].passport << endl;
-				cout << "¹ òåëåôîíà: " << st[i].number << endl;
+				cout << "Ð¤Ð˜Ðž: " << st[i].fio << endl;
+				cout << "â„– Ð¿Ð°ÑÐ¿Ð¾Ñ€Ñ‚Ð°: " << st[i].passport << endl;
+				cout << "â„– Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°: " << st[i].number << endl;
 				p = 1;
 			}
 		}
 	}
 	else
 	{
-		cout << "Ðåçóëüòàò ïîèñêà:"<<endl;
+		cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ð¿Ð¾Ð¸ÑÐºÐ°:"<<endl;
 		for (int i = 0; i < n; i++)
 		{
 			l = Boer_Moor(st[i].number);
 			if (l != 0)
 			{
-				cout << "ÔÈÎ: " << st[i].fio << endl;
-				cout << "¹ ïàñïîðòà: " << st[i].passport << endl;
-				cout << "¹ òåëåôîíà: " << st[i].number << endl;
+				cout << "Ð¤Ð˜Ðž: " << st[i].fio << endl;
+				cout << "â„– Ð¿Ð°ÑÐ¿Ð¾Ñ€Ñ‚Ð°: " << st[i].passport << endl;
+				cout << "â„– Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°: " << st[i].number << endl;
 				p = 1;
 			}
 		}
 	}
 	if (p == 0)
 	{
-		cout << "Ýëåìåíò ñ çàäàííûì êëþ÷îì íå íàéäåí" << endl;
+		cout << "Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚ Ñ Ð·Ð°Ð´Ð°Ð½Ð½Ñ‹Ð¼ ÐºÐ»ÑŽÑ‡Ð¾Ð¼ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½" << endl;
 	}
 	return 0;
 }
