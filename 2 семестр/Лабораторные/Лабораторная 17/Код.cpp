@@ -11,9 +11,9 @@ struct info
 	string number;
 	void Show()
 	{
-		cout << "\nÔÈÎ: " << fio
-			<< "\n¹Ïàñïîðò: " << passport
-			<< "\n¹Òåëåôîí: " << number << endl;
+		cout << "\nÐ¤Ð˜Ðž: " << fio
+			<< "\nâ„–ÐŸÐ°ÑÐ¿Ð¾Ñ€Ñ‚: " << passport
+			<< "\nâ„–Ð¢ÐµÐ»ÐµÑ„Ð¾Ð½: " << number << endl;
 	}
 	void Random()
 	{
@@ -95,15 +95,15 @@ void make_table(int n, int size, info* st2)
 			}
 		}
 	}
-	cout << "×èñëî êîëèçèé: " << collis << endl;
-	cout << "Ââåäèòå êëþ÷ äëÿ ïîèñêà: ";
+	cout << "Ð§Ð¸ÑÐ»Ð¾ ÐºÐ¾Ð»Ð¸Ð·Ð¸Ð¹: " << collis << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ»ÑŽÑ‡ Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ°: ";
 	string key;
 	cin.ignore();
 	getline(cin, key);
 	int hashkey = hash_t(key, hashn);
 	if (st2[table[hashkey]].number == key)
 	{
-		cout << "Ýëåìåíò íàéäåí: " << endl;
+		cout << "Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚ Ð½Ð°Ð¹Ð´ÐµÐ½: " << endl;
 		st2[table[hashkey]].Show();
 	}
 	else
@@ -114,14 +114,14 @@ void make_table(int n, int size, info* st2)
 		}
 		if (st2[table[hashkey]].number == key)
 		{
-			cout << "Ýëåìåíò íàéäåí: " << endl;
+			cout << "Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚ Ð½Ð°Ð¹Ð´ÐµÐ½: " << endl;
 			st2[table[hashkey]].Show();
 		}
 		else
-			cout << "Òàêîãî ýëåìåíòà íå íàéäåíî";
+			cout << "Ð¢Ð°ÐºÐ¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾";
 	}
 	bool p = 0;
-	cout << "Õîòèòå óäàëèòü ýëåìåíò? (0/1)" << endl;
+	cout << "Ð¥Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚? (0/1)" << endl;
 	cin >> p;
 	if (p)
 	{
@@ -134,7 +134,7 @@ void make_table(int n, int size, info* st2)
 			st[i] = st2[i + 1];
 		}
 		delete[]st2;
-		cout << "Ïîñëå óäàëåíèÿ: " << endl;
+		cout << "ÐŸÐ¾ÑÐ»Ðµ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ: " << endl;
 		for (int i = 0; i < n - 1; i++)
 		{
 			st[i].Show();
@@ -149,9 +149,9 @@ int main()
 	srand(time(0));
 	int n, size;
 	string key;
-	cout << "Êîë-âî ýëåìåíòîâ: ";
+	cout << "ÐšÐ¾Ð»-Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð²: ";
 	cin >> n;
-	cout << "Ðàçìåð òàáëèöû: ";
+	cout << "Ð Ð°Ð·Ð¼ÐµÑ€ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ñ‹: ";
 	cin >> size;
 	info* st = new info[n];
 	int* table = new int[size];
